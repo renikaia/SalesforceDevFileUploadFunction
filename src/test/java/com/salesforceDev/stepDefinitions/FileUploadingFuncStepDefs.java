@@ -54,8 +54,9 @@ public class FileUploadingFuncStepDefs {
 
     @Then("user should be able to see the uploaded file there")
     public void userShouldBeAbleToSeeTheUploadedFileThere() {
+        Driver.getDriver().navigate().refresh();
+        BrowserUtilities.waitFor(5);
         Assert.assertTrue(viewAllPage.webPFileInTheViewAllPage.isDisplayed());
-        //User deletes the file.
 
     }
 
@@ -72,7 +73,7 @@ public class FileUploadingFuncStepDefs {
                     BrowserUtilities.waitFor(3);
                 }
                 while (viewAllPage.closeButtonAfterUploadingFile.isDisplayed());
-            }catch (NoSuchElementException e){
+            } catch (NoSuchElementException e) {
                 e.printStackTrace();
             }
         }
@@ -80,8 +81,4 @@ public class FileUploadingFuncStepDefs {
 
     }
 
-    @Then("user should be able to see uploaded files there")
-    public void userShouldBeAbleToSeeUploadedFilesThere() {
-
-    }
 }

@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt",},
         features = "src/test/resources/features",
         glue = "com/salesforceDev/stepDefinitions",
-        dryRun = false,
-        tags = "@Test1"
+        dryRun = false
+        //tags = "@Test2"
 
 
 )
