@@ -11,13 +11,13 @@ public class BasePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(css = "#Username")
+    @FindBy(css = "#username")
     public WebElement usernameInput;
 
-    @FindBy(css = "#Password")
+    @FindBy(css = "#password")
     public WebElement passwordInput;
 
-    @FindBy(css = "#Login")
+    @FindBy(id = "Login")
     public WebElement loginButton;
 
     @FindBy(xpath = "//button[. = 'App Launcher']")
@@ -26,7 +26,7 @@ public class BasePage {
     @FindBy(xpath = "//button[. = 'View All']")
     public WebElement viewAllButton;
 
-    @FindBy(xpath = "//p[. = 'Accounts']")
+    @FindBy(xpath = "//a[@data-label='Accounts']/parent::*")
     public WebElement accountsParagraph;
 
     @FindBy(xpath = "//div/span[. = 'Accounts']")
@@ -34,6 +34,9 @@ public class BasePage {
 
     @FindBy(xpath = "//tr[1]//a[. = 'CyanGate']")
     public WebElement firstCyanGateAccount;
+
+    @FindBy (xpath = "(//input[@type='search'])[3]")
+    public WebElement inputSearchBox;
 
 
 
