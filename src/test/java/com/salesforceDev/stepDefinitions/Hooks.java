@@ -18,13 +18,13 @@ public class Hooks {
 
     private static int id = 1;
     BasePage basePage = new BasePage();
+    JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
 
 
     @Before
     public void setDriver() {
         String username = "nihalimek@gmail.com";
         String password = "dyvmy8-rEhsag-birgaf";
-        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
 
         Driver.getDriver().get(ConfigurationReader.getProperty("homePage"));
         basePage.usernameInput.sendKeys(username);
@@ -47,13 +47,19 @@ public class Hooks {
     public void teardownScenario(Scenario scenario) throws IOException {
         ViewAllPage viewAllPage = new ViewAllPage();
 
+      /*  try {
 
-
-
-      /*  while (viewAllPage.selectButton.isDisplayed()) {
-            viewAllPage.selectButton.click();
-            viewAllPage.deleteLinkAfterSelectButton.click();
-            viewAllPage.deleteButtonPopup.click();
+            do {
+                jse.executeScript("arguments[0].click();", viewAllPage.selectButton);
+                jse.executeScript("arguments[0].click();", viewAllPage.deleteLinkAfterSelectButton);
+                jse.executeScript("arguments[0].click();", viewAllPage.deleteButtonPopup);
+                BrowserUtilities.waitFor(5);
+                Driver.getDriver().navigate().refresh();
+                BrowserUtilities.waitFor(5);
+            }
+            while (viewAllPage.selectButton.isDisplayed());
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
         }
 
        */
@@ -62,6 +68,8 @@ public class Hooks {
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", (id++) + scenario.getName());
         }
+
+
         //Driver.closeDriver();
     }
 
