@@ -47,7 +47,7 @@ public class Hooks {
     public void teardownScenario(Scenario scenario) throws IOException {
         ViewAllPage viewAllPage = new ViewAllPage();
 
-      try {
+     /* try {
 
             do {
                 jse.executeScript("arguments[0].click();", viewAllPage.selectButton);
@@ -61,6 +61,8 @@ public class Hooks {
         } catch (NoSuchElementException e) {
             e.printStackTrace();
         }
+
+      */
 
         if (scenario.isFailed()) {
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
