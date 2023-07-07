@@ -23,8 +23,8 @@ public class Hooks {
 
     @Before
     public void setDriver() {
-        String username = "nihalimek@gmail.com";
-        String password = "dyvmy8-rEhsag-birgaf";
+        String username = "kaya@cyangate.com";
+        String password = "test1234";
 
         Driver.getDriver().get(ConfigurationReader.getProperty("homePage"));
         basePage.usernameInput.sendKeys(username);

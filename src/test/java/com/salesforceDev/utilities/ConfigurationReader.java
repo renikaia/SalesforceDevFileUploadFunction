@@ -8,11 +8,15 @@ public abstract class ConfigurationReader {
 
     private static final Properties properties = new Properties();
 
+
+
     static{
 
         try {
 
             FileInputStream file = new FileInputStream("configuration.properties");
+            System.setProperty("webdriver.http.factory", "jdk-http-client");
+
 
             properties.load(file);
 
