@@ -18,10 +18,10 @@ public class FileUploadingFuncStepDefs {
     ViewAllPage viewAllPage = new ViewAllPage();
     JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
 
-    String pathForMP4 = "/Users/kaya/IdeaProjects/SalesforceDevFileUploadFunction/filesUsedForUploadTest/fileToUploadAsMP4.mp4";
-    String pathForPDF = "/Users/kaya/IdeaProjects/SalesforceDevFileUploadFunction/filesUsedForUploadTest/fileToUploadAsPDF.pdf";
-    String pathForPPT = "/Users/kaya/IdeaProjects/SalesforceDevFileUploadFunction/filesUsedForUploadTest/fileToUploadAsPPT.pptx";
-    String pathForWebP = "/Users/kaya/IdeaProjects/SalesforceDevFileUploadFunction/filesUsedForUploadTest/fileToUploadAsWebP.webp";
+    String pathForMP4 = "C:\\Users\\Administrator\\IdeaProjects\\SalesforceDevFileUploadFunction\\filesUsedForUploadTest\\fileToUploadAsMP4.mp4";
+    String pathForPDF = "C:\\Users\\Administrator\\IdeaProjects\\SalesforceDevFileUploadFunction\\filesUsedForUploadTest\\fileToUploadAsPDF.pdf";
+    String pathForPPT = "C:\\Users\\Administrator\\IdeaProjects\\SalesforceDevFileUploadFunction\\filesUsedForUploadTest\\fileToUploadAsPPT.pptx";
+    String pathForWebP = "C:\\Users\\Administrator\\IdeaProjects\\SalesforceDevFileUploadFunction\\filesUsedForUploadTest\\fileToUploadAsWebP.webp";
 
     @Given("user is on the homepage of the application")
     public void userIsOnTheHomepageOfTheApplication() {
